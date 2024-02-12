@@ -74,7 +74,7 @@ const Profile = () => {
 
             await axios
                 .post(
-                    `http://localhost:4000/api/user/update/${userData?.data?.userData?._id || userData?.data?._id
+                    `https://authentication-app-loy8.onrender.com/api/user/update/${userData?.data?.userData?._id || userData?.data?._id
                     }`,
                     formData,
                     {
@@ -99,7 +99,7 @@ const Profile = () => {
         try {
             await axios
                 .delete(
-                    `http://localhost:4000/api/user/delete/${userData?.data?.userData?._id || userData?.data?._id
+                    `https://authentication-app-loy8.onrender.com/api/user/delete/${userData?.data?.userData?._id || userData?.data?._id
                     }`,
                     { withCredentials: true }
                 )
@@ -112,7 +112,7 @@ const Profile = () => {
     const handleSignOut = async () => {
         try {
             await axios
-                .get("http://localhost:4000/api/auth/sign-out", {withCredentials: true})
+                .get("https://authentication-app-loy8.onrender.com/api/auth/sign-out", {withCredentials: true})
                 .then((res) => dispatch(userSignOut(res)));
         } catch (error) { }
     };
