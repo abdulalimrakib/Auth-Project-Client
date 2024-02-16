@@ -19,7 +19,7 @@ const FirebaseOth = () => {
 
             axios
                 .post(
-                    "http://localhost:4000/api/auth/google",
+                    "/api/auth/google",
                     {
                         username: result.user.displayName,
                         email: result.user.email,
@@ -43,7 +43,7 @@ const FirebaseOth = () => {
             className="flex justify-center items-center gap-3 p-2 md:p-3 border-2 rounded-lg hover:bg-gray-200"
         >
             <img
-                src="../../public/Google__G__logo.svg.png"
+                src="../image/Google__G__logo.svg.png"
                 className="md:w-[25px] h-[18px] md:h-[25px]"
                 alt=""
             />
