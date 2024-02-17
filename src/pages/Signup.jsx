@@ -23,7 +23,7 @@ const Signup = () => {
             setIsError(false);
             setIsLoading(true);
             await exios
-                .post("http://localhost:4000/api/auth/signup", formData)
+                .post("https://authentication-app-loy8.onrender.com/api/auth/signup", formData)
                 .then((res) => {
                     setIsLoading(false);
                     if (!res?.data?.success) {

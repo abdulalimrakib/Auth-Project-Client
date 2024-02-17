@@ -22,7 +22,7 @@ const FirebaseOth = () => {
 
             axios
                 .post(
-                    "http://localhost:4000/api/auth/google",
+                    "https://authentication-app-loy8.onrender.com/api/auth/google",
                     {
                         username: result.user.displayName,
                         email: result.user.email,
