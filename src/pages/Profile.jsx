@@ -74,7 +74,7 @@ const Profile = () => {
 
             await axios
                 .post(
-                    `/api/user/update/${userData?.data?.userData?._id || userData?.data?._id
+                    `http://localhost:4000/api/user/update/${userData?.data?.userData?._id || userData?.data?._id
                     }`,
                     formData,
                     {
@@ -99,7 +99,7 @@ const Profile = () => {
         try {
             await axios
                 .delete(
-                    `/api/user/delete/${userData?.data?.userData?._id || userData?.data?._id
+                    `http://localhost:4000/api/user/delete/${userData?.data?.userData?._id || userData?.data?._id
                     }`,
                     { withCredentials: true }
                 )
@@ -112,7 +112,7 @@ const Profile = () => {
     const handleSignOut = async () => {
         try {
             await axios
-                .get("/api/auth/sign-out", {withCredentials: true})
+                .get("http://localhost:4000/api/auth/sign-out", {withCredentials: true})
                 .then((res) => dispatch(userSignOut(res)));
         } catch (error) { }
     };

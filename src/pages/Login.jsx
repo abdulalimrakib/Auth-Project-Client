@@ -24,7 +24,7 @@ const Login = () => {
             e.preventDefault();
             dispatch(signInStart())
             await axios
-                .post("/api/auth/login", formData, {withCredentials: true})
+                .post("http://localhost:4000/api/auth/login", formData, {withCredentials: true})
                 .then(async (res) => {
                     if (!res?.data?.success) {
                         dispatch(signInFailure(res))

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../fireBaseConfig";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { signInSuccessful } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
+import gImg from '../image/Google__G__logo.svg.png'
 
 const FirebaseOth = () => {
+    const image = [gImg]
+    const [imageIndex, setImageIndex] = useState(0)
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -19,7 +22,7 @@ const FirebaseOth = () => {
 
             axios
                 .post(
-                    "/api/auth/google",
+                    "http://localhost:4000/api/auth/google",
                     {
                         username: result.user.displayName,
                         email: result.user.email,
@@ -43,7 +46,7 @@ const FirebaseOth = () => {
             className="flex justify-center items-center gap-3 p-2 md:p-3 border-2 rounded-lg hover:bg-gray-200"
         >
             <img
-                src="../image/Google__G__logo.svg.png"
+                src={image[imageIndex]}
                 className="md:w-[25px] h-[18px] md:h-[25px]"
                 alt=""
             />
