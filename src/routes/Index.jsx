@@ -8,6 +8,7 @@ import Navbar from './../layouts/Navbar';
 import PrivetRoute from "../components/PrivetRoute"
 // import Footer from './../layouts/Footer';
 
+
 const Index = () => {
     return (
         <BrowserRouter>
